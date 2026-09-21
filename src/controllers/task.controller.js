@@ -83,7 +83,10 @@ export const getSingleTask = async (req, res) => {
       });
     }
 
-    const task = await taskModel.findById(id);
+    const task = await taskModel.findOne({
+      _id: id,
+      userId: req.user.id,
+    });
     if (!task) {
       return res.status(400).json({
         success: false,
