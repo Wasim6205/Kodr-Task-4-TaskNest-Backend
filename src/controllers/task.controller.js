@@ -53,8 +53,11 @@ export const getAllTasks = async (req, res) => {
         message: "unauthorized",
       });
     }
-
-    const allTasks = await taskModel.find();
+    console.log(user);
+    
+    const allTasks = await taskModel.find({
+        userId: user.id
+    });
     return res.status(200).json({
       success: true,
       message: "tasks fetched successfully",
