@@ -1,3 +1,6 @@
+// POSTMAN WORKSPACE LINK TO TEST API
+// https://www.postman.com/bold-trinity-628549/workspace/tasknest 
+
 import app from "./src/app.js"
 import { config } from "./src/config/config.js"
 import { connectDB } from "./src/config/db.js"
